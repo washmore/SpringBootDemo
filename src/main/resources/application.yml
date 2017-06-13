@@ -6,3 +6,15 @@ server:
     enabled: true
     mime-types: application/json,application/javascript,text/html,text/xml,text/plain,text/css
   port: 12345
+  
+  
+# redis cluster
+spring:
+  redis:
+    pool:
+      max-wait: 30000
+      minIdle: 3
+      maxIdle: 12
+    cluster:
+      max-redirects: 30000
+      #nodes:ip列表逗号分隔
