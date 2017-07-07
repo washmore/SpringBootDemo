@@ -87,6 +87,7 @@
         </snapshotRepository>
     </distributionManagement>
     <build>
+        <finalName>Demo</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
