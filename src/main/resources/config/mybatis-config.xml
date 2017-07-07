@@ -28,7 +28,6 @@
     </settings>
 
     <typeAliases>
-        <!--<typeAlias type="tech.washmore.gold.web.model.Demo" alias="demo"/>-->
         <typeAlias type="tech.washmore.demo.springboot.blog.model.Article" alias="article"/>
     </typeAliases>
 
