@@ -9,8 +9,11 @@ spring boot 实战系列，主要是介绍使用方法，原理性分析以及�
 ### 集成Redis集群
 整合redis集群,基本的两种使用方式demo;
 
-### 集成themeleaf模板引擎
-整合themeleaf模板引擎,前端引入th模版语法
+### 集成thymeleaf模板引擎
+整合thymeleaf模板引擎,前端引入th模版语法
+
+### 集成mybatis
+整合mybaits,使用tomcat-jdbc-pool连接池进行article小样演示,附sql
 
 ---
 
