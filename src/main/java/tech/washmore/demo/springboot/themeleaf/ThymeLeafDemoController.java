@@ -12,12 +12,12 @@ import org.springframework.web.servlet.ModelAndView;
  * @since 2017/6/25
  */
 @Controller
-public class ThemeLeafDemoController {
-    @RequestMapping("/themeleaf")
-    public ModelAndView themeleafDemo(ModelAndView mav) {
+public class ThymeLeafDemoController {
+    @RequestMapping("/thymeleaf")
+    public ModelAndView thymeleafDemo(ModelAndView mav) {
         mav.addObject("hello", "hello");
         mav.addObject("world", "world");
-        mav.setViewName("themeleafdemo");
+        mav.setViewName("thymeleafdemo");
         return mav;
     }
 }
