@@ -17,3 +17,16 @@ spring.thymeleaf:
    mode: LEGACYHTML5 # Template mode to be applied to templates. See also StandardTemplateModeHandlers.
    prefix: "classpath:/pages/" # Prefix that gets prepended to view names when building a URL.
    suffix: ".html"  # Suffix that gets appended to view names when building a URL.
+
+spring:
+  datasource:
+    tomcat:
+      url: jdbc:mysql://192.168.0.148:3306/solo_backup?characterEncoding=utf8&useUnicode=true
+      driver-class-name: com.mysql.jdbc.Driver
+      max-idle: 5
+      min-idle: 2
+      initial-size: 5
+      max-wait: 5000
+      max-active: 10
+
+

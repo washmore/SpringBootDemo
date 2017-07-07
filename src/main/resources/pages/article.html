@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>article</title>
+    <!--<script type='text/javascript' th:inline="javascript">-->
+    <!--var hello = [[${hello}]];-->
+    <!--alert(hello);-->
+    <!--</script>-->
+</head>
+<body>
+<h2>这是最受欢迎的<span th:text="${topAriticles.size()}"></span>篇文章</h2>
+<p th:each="article:${topAriticles}">
+    <span th:text="${article.title}"></span><br/>
+    <span th:text="${article.content}"></span>
+</p>
+</body>
+</html>
