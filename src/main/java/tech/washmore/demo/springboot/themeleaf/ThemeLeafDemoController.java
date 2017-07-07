@@ -17,7 +17,7 @@ public class ThemeLeafDemoController {
     public ModelAndView themeleafDemo(ModelAndView mav) {
         mav.addObject("hello", "hello");
         mav.addObject("world", "world");
-        mav.setViewName("themleafdemo");
+        mav.setViewName("themeleafdemo");
         return mav;
     }
 }
