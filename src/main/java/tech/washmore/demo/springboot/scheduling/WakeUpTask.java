@@ -16,7 +16,7 @@ import java.io.InputStreamReader;
 public class WakeUpTask {
     private static final Logger LOGGER = LoggerFactory.getLogger(WakeUpTask.class);
 
-    @Scheduled(cron = "? 22 8 * * ?")
+    @Scheduled(cron = "0 22 8 * * ?")
     public void wakeUp() throws Exception {
         try {
             Process process = Runtime.getRuntime().exec("E:\\Program Files (x86)\\Tencent\\QQMusic\\QQMusic.exe");
