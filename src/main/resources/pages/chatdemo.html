@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>洗澡狂魔</title>
+</head>
+<body>
+
+<div id="messages"></div>
+<div>
+    <textarea id="text2send"></textarea>
+    <br/>
+    <input type="button" value="send" onclick="send()"/>
+</div>
+<script type="text/javascript">
+    var webSocket = new WebSocket('ws://127.0.0.1:8080/webSocket');
+    webSocket.onerror = function (event) {
+        onError(event)
+    };
+
+    webSocket.onopen = function (event) {
+        onOpen(event)
+    };
+
+    webSocket.onmessage = function (event) {
+        onMessage(event)
+    };
+
+    function onMessage(event) {
+        document.getElementById('messages').innerHTML
+            += '<br />' + event.data;
+    }
+
+    function onOpen(event) {
+        document.getElementById('messages').innerHTML
+            = 'Connection established';
+    }
+
+    function onError(event) {
+        alert(event.data);
+    }
+
+    function send() {
+        webSocket.send(document.getElementById('text2send').value);
+        document.getElementById('messages').innerHTML
+            += '<br />send msg:' + document.getElementById('text2send').value;
+        document.getElementById('text2send').value = "";
+    }
+</script>
+</body>
+</html>

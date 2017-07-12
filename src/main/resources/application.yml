@@ -5,4 +5,15 @@ server:
   compression:
     enabled: true
     mime-types: application/json,application/javascript,text/html,text/xml,text/plain,text/css
-  port: 12345
+  port: 8080
+
+#thymeleaf
+spring.thymeleaf:
+   cache: false # Enable template caching.
+   check-template-location: true # Check that the templates location exists.
+   content-type: text/html # Content-Type value.
+   enabled: true # Enable MVC Thymeleaf view resolution.
+   encoding: UTF-8 # Template encoding.
+   mode: LEGACYHTML5 # Template mode to be applied to templates. See also StandardTemplateModeHandlers.
+   prefix: "classpath:/pages/" # Prefix that gets prepended to view names when building a URL.
+   suffix: ".html"  # Suffix that gets appended to view names when building a URL.
