@@ -3,7 +3,9 @@ package tech.washmore.demo.springboot.redis;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.interceptor.CacheErrorHandler;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheManager;
@@ -20,7 +22,7 @@ import java.util.Map;
  */
 @Configuration
 @EnableCaching
-public class RedisCacheConfig {
+public class RedisCacheConfig extends CachingConfigurerSupport {
     @Configuration
     static class LocalCacheConfig implements InitializingBean {
         @Autowired
@@ -73,4 +75,16 @@ public class RedisCacheConfig {
          */
         String WASHMORE_CACHE_ETERNAL = "washmore_cache_eternal";
     }
+
+    /**
+     * 异常处理器,当使用注解形式缓存的时候,如果缓存服务器出问题,我们希望对服务降级到数据库,而非直接中断正常业务逻辑的话,需要在此复写该方法自行提供异常处理器实现,springboot自动装配的异常处理器会直接抛出;
+     *
+     * @return
+     */
+    @Override
+    public CacheErrorHandler errorHandler() {
+        return new WashmoreCacheErrorHandler();
+    }
+
+
 }
