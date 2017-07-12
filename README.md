@@ -25,8 +25,8 @@ spring boot 实战系列，主要是介绍使用方法，原理性分析以及�
 使用spring内置的定时任务触发器完成简单的定时调度作业,给自己写了个简单的闹钟(打开QQ音乐并大声的唱出来!!),改天为大家集成Quartz实现带有分布式锁功能的高级定制定时任务调度中心实现
 
 ### 简单(简陋)的websocket应用
-使用servlet原生的websocket完成一个小聊天室的实现,注意springboot集成时需要额外注册一个ServerEndpointExporter的bean,而外部容器(如tomcat)则不需要此配置;  
-后续放出基于spring-boot-starter-websocket和mysql( **而非MQ** )的另类支持分布式,消息持久化的聊天室
+使用servlet原生的websocket完成一个小聊天室的实现,注意springboot集成时需要额外注册一个ServerEndpointExporter的bean,而外部容器(如tomcat)则不需要此配置,还是详见官方文档,少打游戏多读书;
+后续放出基于spring-boot-starter-websocket和mysql( 而非MQ )的另类支持分布式,消息持久化的聊天室
 
 ---
 
