@@ -18,8 +18,8 @@ spring boot 实战系列，主要是介绍使用方法，原理性分析以及�
 ### 集成mongodb
 整合mongodb,mongoRepsitory接口能满足多数增删改差功能,使用mongoTemplate结合QBC语法完成更高定制化的CRUD操作
 
-### 集成mongodb
-整合mongodb,mongoRepsitory接口能满足多数增删改差功能,使用mongoTemplate结合QBC语法完成更高定制化的CRUD操作
+### lombok奇淫巧技
+整合lombok,注意需要ide插件支持,简化model代码,但是给代码阅读带来困扰,非生产环境不推荐使用;
 
 ### 定时任务调度(不支持分布式)
 使用spring内置的定时任务触发器完成简单的定时调度作业,给自己写了个简单的闹钟(打开QQ音乐并大声的唱出来!!),改天为大家集成Quartz实现带有分布式锁功能的高级定制定时任务调度中心实现
