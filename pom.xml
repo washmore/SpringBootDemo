@@ -26,6 +26,17 @@
             <artifactId>guava</artifactId>
             <version>19.0</version>
         </dependency>
+        <!-- commons系列包-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.1</version>
+        </dependency>
         <!-- 自动getter/setter ,需要插件支持 -->
         <dependency>
             <groupId>org.projectlombok</groupId>
