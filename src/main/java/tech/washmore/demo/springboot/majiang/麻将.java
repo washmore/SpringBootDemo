@@ -1,7 +1,7 @@
 package tech.washmore.demo.springboot.majiang;
 
 public enum 麻将 {
-    红中(0, 0),
+    //红中(0, 0),
     一饼(1, 1),
     二饼(1, 2),
     三饼(1, 3),
