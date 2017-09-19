@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.Canvas?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="tech.washmore.demo.springboot.fx.controller.MainViewController">
+    <children>
+        <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0"
+                 AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <tabs>
+                <Tab text="names">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TextField fx:id="inputName" layoutX="221.0" layoutY="125.0"/>
+                                <Button layoutX="280.0" layoutY="186.0" mnemonicParsing="false"
+                                        onMouseClicked="#setName" text="点击"/>
+                                <Label fx:id="showName" alignment="CENTER" contentDisplay="CENTER" layoutX="212.0"
+                                       layoutY="88.0" prefWidth="148.0" style="-fx-max-width: 280; -fx-min-width: 180;"
+                                       text="hello world!" textAlignment="CENTER"/>
+                                <Label fx:id="showNameAgain" alignment="CENTER" contentDisplay="CENTER" layoutX="212.0"
+                                       layoutY="48.0" prefWidth="148.0" style="-fx-max-width: 280; -fx-min-width: 180;"
+                                       text="hello world!" textAlignment="CENTER"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="snake">
+                    <content>
+                        <AnchorPane>
+                            <children>
+                                <Canvas fx:id="snakeCanvas" height="323.0" layoutX="46.0" layoutY="24.0" width="508.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
