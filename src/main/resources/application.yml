@@ -5,4 +5,4 @@ server:
   compression:
     enabled: true
     mime-types: application/json,application/javascript,text/html,text/xml,text/plain,text/css
-  port: 12345
+  port: 11234
