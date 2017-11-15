@@ -1,7 +1,14 @@
 package tech.washmore.demo.springboot;
 
+import io.netty.bootstrap.Bootstrap;
+import io.netty.channel.ChannelOption;
+import io.netty.channel.EventLoopGroup;
+import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.socket.nio.NioDatagramChannel;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import tech.washmore.demo.springboot.p2p.EchoServerHandler;
 
 /**
  * @author Washmore
@@ -11,7 +18,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since 2017/6/13
  */
 @SpringBootApplication
-public class SpringBootDemoStarter {
+public class SpringBootDemoStarter implements CommandLineRunner {
 
     public static void main(String[] args) {
         try {
@@ -24,4 +31,21 @@ public class SpringBootDemoStarter {
     }
 
 
+    @Override
+    public void run(String... strings) throws Exception {
+        Bootstrap b = new Bootstrap();
+        EventLoopGroup group = new NioEventLoopGroup();
+        try {
+            b.group(group)
+                    .channel(NioDatagramChannel.class)
+                    .option(ChannelOption.SO_BROADCAST, true)
+                    .handler(new EchoServerHandler());
+
+            b.bind(7402).sync().channel().closeFuture().await();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            group.shutdownGracefully();
+        }
+    }
 }

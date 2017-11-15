@@ -28,10 +28,12 @@ public class EchoServerHandler extends SimpleChannelInboundHandler<DatagramPacke
             //保存到addr1中 并发送addr2
             addr1 = packet.sender();
             System.out.println("L 命令， 保存到addr1中 ");
+            System.out.println(addr1);
         }else if(str.equalsIgnoreCase("R")){
             //保存到addr2中 并发送addr1
             addr2 = packet.sender();
             System.out.println("R 命令， 保存到addr2中 ");
+            System.out.println(addr2);
         }else if(str.equalsIgnoreCase("M")){
             //addr1 -> addr2
             String remot = "A " + addr2.getAddress().toString().replace("/", "")

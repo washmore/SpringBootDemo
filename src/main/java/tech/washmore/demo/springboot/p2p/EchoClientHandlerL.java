@@ -9,7 +9,7 @@ import io.netty.channel.socket.DatagramPacket;
 import java.net.InetSocketAddress;
 
 //L
-public class EchoClientHandler extends SimpleChannelInboundHandler<DatagramPacket> {
+public class EchoClientHandlerL extends SimpleChannelInboundHandler<DatagramPacket>{
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, DatagramPacket packet)
@@ -21,7 +21,7 @@ public class EchoClientHandler extends SimpleChannelInboundHandler<DatagramPacke
         String str = new String(req, "UTF-8");
         String[] list = str.split(" ");
         //如果是A 则发送
-        if (list[0].equals("A")) {
+        if(list[0].equals("A")){
             String ip = list[1];
             String port = list[2];
             ctx.writeAndFlush(new DatagramPacket(
@@ -38,7 +38,7 @@ public class EchoClientHandler extends SimpleChannelInboundHandler<DatagramPacke
         System.out.println("客户端向服务器发送自己的IP和PORT");
         ctx.writeAndFlush(new DatagramPacket(
                 Unpooled.copiedBuffer("L".getBytes()),
-                new InetSocketAddress("127.0.0.1", 7402)));
+                new InetSocketAddress("103.81.169.55", 7402)));
         super.channelActive(ctx);
     }
 }
