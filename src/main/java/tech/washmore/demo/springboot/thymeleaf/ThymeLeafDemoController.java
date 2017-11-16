@@ -1,4 +1,4 @@
-package tech.washmore.demo.springboot.themeleaf;
+package tech.washmore.demo.springboot.thymeleaf;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  * @author Washmore
  * @version V1.0
- * @summary themeleafDemo
+ * @summary thymeleafDemo
  * @Copyright (c) 2017, Lianjia Group All Rights Reserved.
  * @since 2017/6/25
  */
